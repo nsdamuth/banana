@@ -44,25 +44,29 @@
         display: none;
         top: 30px;
     }
-
     .map-legend {
         color   : #c8c8c8;
         padding : 10px;
-        font-size: 11pt;
-        font-weight: 200;
-        background-color: #1f1f1f;
+        font-size: 40pt;
+        font-weight: bold;
         border-radius: 5px;
         position: absolute;
         right: 0px;
-        top: 15px;
+        bottom: -70px;
         display: none;
         z-index: 99;
     }
+    .dropdown_menu_custom {
+        width: 500px;
+        height: 48pt;
+        font-size: 30pt;
+    }
+
   </style>
   <div class="jvectormap" map params="{{panel}}" ng-style="{height:panel.height || row.height}">
   </div>
   <div>
-    <label class="small">Metric<tip data-placement="right">For changing between parameter values for the map.</tip></label>
+    <label class="large">Metric<tip data-placement="right">For changing between parameter values for the map.</tip></label>
     <select ng-change="update_value()" class="input-small" ng-model="selectedItem" ng-options="item.param for item in panel.stats_fields"></select>
   </div>
 </div>

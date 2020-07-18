@@ -87,7 +87,26 @@
       <label class="small">Interval <tip>Use Solr date math format (eg 1m, 5m, 1d, 2w, 1y)</tip></label>
       <input type="text" class='input-mini' ng-model="panel.interval" ng-change='set_refresh(true)'/>
     </div>
+    <div class="span2" ng-hide='panel.auto_int'>
+      <td class="span5">
+        <label class="small">Colors</label>
+        <input type="text" class="input-medium" style="width:200px;" ng-model="panel.color" ng-change="set_refresh(true)">
+      </td>
+    </div>
   </div>
+
+  <h5>Color Settings</h5>
+  <div class="row-fluid">
+    <div class="span3">
+        <label class="small">Grid Color</label>
+        <input type="text" class="input-medium" style="width:200px;" ng-model="panel.grid_color" ng-change="set_refresh(true)">
+    </div>
+    <div class="span3">
+        <label class="small">Chart Color Override</label>
+        <input type="text" class="input-medium" style="width:200px;" ng-model="panel.color" ng-change="set_refresh(true)">
+    </div>
+  </div>
+
 
   <h5>Tooltip Settings</h5>
   <div class="row-fluid" style="margin-bottom:10px;">

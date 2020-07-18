@@ -79,6 +79,8 @@ function (angular, app, $, _, kbn, moment, timeSeries) {
         query       : '*:*',
         custom      : ''
       },
+      grid_color  : '#888888',
+      color       : '',
       max_rows    : 100000,  // maximum number of rows returned from Solr (also use this for group.limit to simplify UI setting)
       value_field : null,
       group_field : null,
@@ -537,7 +539,11 @@ function (angular, app, $, _, kbn, moment, timeSeries) {
           try {
             _.each(scope.data, function(series) {
               series.label = series.info.alias;
-              series.color = series.info.color;
+              if (scope.panel.color != '' ) {
+                  series.color = scope.panel.color;
+              } else {
+                  series.color = series.info.color;
+              }
             });
           } catch(e) {return;}
 

@@ -45,7 +45,7 @@ function (angular, app, _, $, worldmap) {
     function Metric() {
       this.param = ''; 
       this.decimal_points = 0;
-      this.colors = '#A0E2E2, #265656';
+      this.colors = '#FFFFFF,#265656';
       this.value = 0;
     }
     $scope.addMetric = function () {
@@ -96,10 +96,6 @@ function (angular, app, _, $, worldmap) {
         return;
       }
     };
-    $scope.update_value = function(metric) {
-      $scope.panel.stats_field = metric.param
-      $scope.set_refresh(true)
-    }
     $scope.update_value = function() {
       console.log($scope.selectedItem)
       $scope.panel.stats_field = $scope.selectedItem.param
