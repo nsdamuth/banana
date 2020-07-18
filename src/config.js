@@ -107,6 +107,7 @@ function (Settings) {
       'bar',
       'histogram',
       'map',
+      'map_swapable',
       'table',
       'filtering',
       'timepicker',

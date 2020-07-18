@@ -59,5 +59,10 @@
         z-index: 99;
     }
   </style>
-  <div class="jvectormap" map params="{{panel}}" ng-style="{height:panel.height || row.height}"></div>
+  <div class="jvectormap" map params="{{panel}}" ng-style="{height:panel.height || row.height}">
+  </div>
+  <div>
+    <label class="small">Metric<tip data-placement="right">For changing between parameter values for the map.</tip></label>
+    <select ng-change="update_value()" class="input-small" ng-model="selectedItem" ng-options="item.param for item in panel.stats_fields"></select>
+  </div>
 </div>

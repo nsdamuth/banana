@@ -42,7 +42,20 @@ function (angular, app, _, $, worldmap) {
       status  : "Stable",
       description : "Displays a map of shaded regions using a field containing a 2 letter country code or US state code. Regions with more hits are shaded darker. It uses Solr faceting, so it is important that you set field values to the appropriate 2-letter codes at index time. Recent additions provide the ability to compute mean/max/min/sum of a numeric field by country or state."
     };
-
+    function Metric() {
+      this.param = ''; 
+      this.decimal_points = 0;
+      this.colors = '#A0E2E2, #265656';
+      this.value = 0;
+    }
+    $scope.addMetric = function () {
+      $scope.panel.stats_fields.push(new Metric());
+    };
+    $scope.removeMetric = function (metric) {
+      if ($scope.panel.stats_fields.length > 1) {
+          $scope.panel.stats_fields = _.without($scope.panel.stats_fields, metric);
+      }
+    };
     // Set and populate defaults
     var _d = {
       queries     : {
@@ -54,6 +67,7 @@ function (angular, app, _, $, worldmap) {
       mode  : 'count', // mode to tell which number will be used to plot the chart.
       field : '', // field to be used for rendering the map.
       stats_field : '',
+      stats_fields: [],
       decimal_points : 0, // The number of digits after the decimal point
       map     : "world",
       useNames	: false,
@@ -82,6 +96,17 @@ function (angular, app, _, $, worldmap) {
         return;
       }
     };
+    $scope.update_value = function(metric) {
+      $scope.panel.stats_field = metric.param
+      $scope.set_refresh(true)
+    }
+    $scope.update_value = function() {
+      console.log($scope.selectedItem)
+      $scope.panel.stats_field = $scope.selectedItem.param
+      $scope.panel.colors = $scope.selectedItem.colors.split(',')
+      $scope.get_data()
+      $scope.set_refresh(true)
+    }
 
     $scope.set_refresh = function (state) {
       $scope.refresh = state;
@@ -122,7 +147,7 @@ function (angular, app, _, $, worldmap) {
 
       // Then the insert into facet and make the request
       request = request
-        .facet($scope.ejs.TermsFacet('map')
+        .facet($scope.ejs.TermsFacet('map_swapable')
           .field($scope.panel.field)
           .size($scope.panel.size)
           .exclude($scope.panel.exclude)
@@ -245,7 +270,7 @@ function (angular, app, _, $, worldmap) {
 
   });
 
-  module.directive('map', function() {
+  module.directive('map_swapable', function() {
     return {
       restrict: 'A',
       link: function(scope, elem) {
