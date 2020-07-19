@@ -68,3 +68,19 @@
         <input type="number" min="2" class="input-mini" ng-model="panel.refresh.interval">
     </div>
 </div>
+<div class="row-fluid">
+    <div class="span2" ng-show="panel.mode != 'count'">
+        <button class="btn btn-success" ng-click="addGroup();" ng-change="set_refresh(true)">Add Group</button>
+    </div>
+    <table class="table table-condensed table-striped" ng-show="panel.mode != 'count'">
+        <tr ng-repeat="group in panel.group_fields" data-drag="false" jqyoui-draggable="{animate:true}">
+            <td class="span3">
+                <input type="text" class="input-large" placeholder="Group name" bs-typeahead="fields.list"
+                    ng-model="group.param" ng-change="set_refresh(true)">
+            </td>
+            <td>
+                <button class="btn btn-danger" ng-click="removeGroup(metric)"><i class="icon-remove"></i></button>
+            </td>
+        </tr>
+    </table>
+</div>

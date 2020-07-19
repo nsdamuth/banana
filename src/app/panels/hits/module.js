@@ -49,7 +49,17 @@ define([
             this.label = '';
             this.value = 0;
         }
-
+        function Group() {
+            this.param = ''; 
+        }
+        $scope.addGroup = function () {
+            $scope.panel.group_fields.push(new Group());
+        };
+        $scope.removeGroup = function (group) {
+            if ($scope.panel.group_fields.length > 1) {
+                $scope.panel.group_fields = _.without($scope.panel.group_fields, group);
+            }
+        };
         // Set and populate defaults
         var _d = {
             queries: {
@@ -59,6 +69,7 @@ define([
                 basic_query: '',
                 custom: ''
             },
+            group_fields : [],
             style: {"font-size": '10pt'},
             arrangement: 'horizontal',
             chart: 'total',
@@ -166,7 +177,13 @@ define([
             if (filterSrv.getSolrFq()) {
                 fq = '&' + filterSrv.getSolrFq();
             }
-
+            var group_data = '';
+            if ($scope.panel.group_fields.length > 0) {
+                group_data = '&group=true'
+                $scope.panel.group_fields.forEach(group => {
+                    group_data = group_data + '&group.field=' + group.param;
+                });
+            }
             var stats = '&stats=true';
             _.each($scope.panel.metrics, function(metric) {
                 if (metric.field) {
@@ -182,7 +199,7 @@ define([
             $scope.panel.queries.query = '';
 
             _.each($scope.panel.queries.ids, function (id) {
-                var temp_q = querySrv.getQuery(id) + fq + stats + wt_json + rows_limit;
+                var temp_q = querySrv.getQuery(id) + fq + group_data + stats + wt_json + rows_limit;
                 $scope.panel.queries.query += temp_q + '\n';
                 // Set the additional custom query
                 if ($scope.panel.queries.custom !== null) {
