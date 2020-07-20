@@ -143,7 +143,7 @@ function (angular, app, _, $, worldmap) {
 
       // Then the insert into facet and make the request
       request = request
-        .facet($scope.ejs.TermsFacet('map_swapable')
+        .facet($scope.ejs.TermsFacet('map')
           .field($scope.panel.field)
           .size($scope.panel.size)
           .exclude($scope.panel.exclude)
@@ -266,7 +266,7 @@ function (angular, app, _, $, worldmap) {
 
   });
 
-  module.directive('map_swapable', function() {
+  module.directive('map', function() {
     return {
       restrict: 'A',
       link: function(scope, elem) {

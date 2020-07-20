@@ -70,6 +70,7 @@ define([
                 custom: ''
             },
             group_fields : [],
+            base : 0,
             style: {"font-size": '10pt'},
             arrangement: 'horizontal',
             chart: 'total',

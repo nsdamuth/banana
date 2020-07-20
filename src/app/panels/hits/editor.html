@@ -69,6 +69,7 @@
     </div>
 </div>
 <div class="row-fluid">
+    <h5>Add Group</h5>
     <div class="span2" ng-show="panel.mode != 'count'">
         <button class="btn btn-success" ng-click="addGroup();" ng-change="set_refresh(true)">Add Group</button>
     </div>
@@ -83,4 +84,13 @@
             </td>
         </tr>
     </table>
+</div>
+<div class="row-fluid">
+    <h5>Modifcations</h5>
+    <div class="span3">
+        <label class="small">Base Number
+            <tip>The minimum value is 0.</tip>
+        </label>
+        <input bs-typeahead="fields.list" type="text" class="input-small" ng-model="panel.base" ng-change="set_refresh(true)">
+    </div>
 </div>
