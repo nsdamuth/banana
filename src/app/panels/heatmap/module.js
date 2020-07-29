@@ -57,6 +57,7 @@ define([
                 transpose_show: true,
                 transposed: false,
                 show_queries:true,
+                indetermined: true
             };
 
             // Set panel's default values

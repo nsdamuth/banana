@@ -8,4 +8,21 @@
     <h6>Facet Limit</h6>
     <input type="number" class="input-medium" ng-model="panel.facet_limit" ng-change="set_refresh(true)">
   </div>
+  <div>
+    <h6>Colors</h6>
+  </div>
+  <div class="span2">
+    <button class="btn btn-success" ng-click="addColor();" ng-change="set_refresh(true)">Add Color</button>
+  </div>
+  <table class="table table-condensed table-striped">
+    <tr ng-repeat="color in panel.colors" data-drag="false" jqyoui-draggable="{animate:true}">
+      <td class="span3" ng-show="panel.colors.count > 1">
+        <label class="small">Color Field <tip>This is one of the colors that will be rotated through by the panel.</tip></label>
+        <input type="text" class="input-medium" style="width:200px;" ng-model="color.code" ng-change="set_refresh(true)">
+      </td>
+      <td>
+        <button class="btn btn-danger" ng-click="removeColor(color)"><i class="icon-remove"></i></button>
+      </td>
+    </tr>
+  </table>
 </div>

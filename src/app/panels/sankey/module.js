@@ -31,7 +31,9 @@ define([
         status: "Experimental",
         description: "Display a Sankey diagram."
       };
-
+      function Color() {
+        this.code = '#0099FF';
+      }
       // default values
       var _d = {
         queries: {
@@ -40,6 +42,8 @@ define([
           query: '*:*',
           custom: ''
         },
+        current_color: 0,
+        colors: [new Color()],
         facet_limit: 1000, // maximum number of rows returned from Solr
         spyable: true,
         show_queries: true,
@@ -55,7 +59,14 @@ define([
         });
         $scope.get_data();
       };
-
+      $scope.addColor= function () {
+        $scope.panel.colors.push(new Color());
+      };
+      $scope.removeColor = function (color) {
+        if ($scope.panel.colors.length > 1) {
+            $scope.panel.colors = _.without($scope.panel.colors, color);
+        }
+      };
       $scope.parse_facet_pivot = function (data) {
         var nodes = {};
         var links = [];
@@ -285,13 +296,20 @@ define([
               .selectAll("g")
               .data(links)
               .enter()
-              .append("g")
-              .style("mix-blend-mode", "multiply");
+              .append("g");
+              // .style("mix-blend-mode", "multiply");
 
             link.append("path").attr("d", d3sankey.sankeyLinkHorizontal())
               .attr("fill", "none")
-              .attr("stroke", "#777777")
-              .attr("stroke-opacity", "0.2")
+              .attr("stroke", function (d) {
+                if (scope.panel.current_color + 1 < scope.panel.colors.length) {
+                  scope.panel.current_color = scope.panel.current_color + 1;
+                } else {
+                  scope.panel.current_color = 0;
+                }
+                return scope.panel.colors[scope.panel.current_color].code
+              })
+              .attr("stroke-opacity", "0.6")
               .attr("stroke-width", function (d) {
               return Math.max(1, d.width);
             });
