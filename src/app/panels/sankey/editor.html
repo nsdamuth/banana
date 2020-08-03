@@ -16,11 +16,11 @@
   </div>
   <table class="table table-condensed table-striped">
     <tr ng-repeat="color in panel.colors" data-drag="false" jqyoui-draggable="{animate:true}">
-      <td class="span3" ng-show="panel.colors.count > 1">
+      <td class="span3">
         <label class="small">Color Field <tip>This is one of the colors that will be rotated through by the panel.</tip></label>
         <input type="text" class="input-medium" style="width:200px;" ng-model="color.code" ng-change="set_refresh(true)">
       </td>
-      <td>
+      <td ng-show="panel.colors.length > 1">
         <button class="btn btn-danger" ng-click="removeColor(color)"><i class="icon-remove"></i></button>
       </td>
     </tr>
