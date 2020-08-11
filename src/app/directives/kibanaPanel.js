@@ -7,7 +7,7 @@ function (angular) {
   angular
     .module('kibana.directives')
     .directive('kibanaPanel', function($compile) {
-      var container = '<div class="panelCont"></div>';
+      // var container = '<div class="panelCont" className=' + $scope + '></div>';
 
       var editorTemplate =
 
@@ -96,7 +96,8 @@ function (angular) {
           // compile the module and uncloack. We're done
           function loadModule($module) {
             $module.appendTo(elem);
-            elem.wrap(container);
+            // var container = '<div class="panelCont" className="test"></div>';
+            // elem.wrap(container);
             /* jshint indent:false */
             $compile(elem.contents())($scope);
             elem.removeClass("ng-cloak");

@@ -40,6 +40,10 @@ function (angular, app, kbn, _/*, $*/) {
     $scope.data = [];
 
     var _d = {
+      panelColor: "#000000",
+      panelBorderWidth: "0",
+      panelBorderColor: "#FFFFFF",
+      panelBorderRadius: "0",
       queries: {
         mode: 'all',
         query: '*:*',

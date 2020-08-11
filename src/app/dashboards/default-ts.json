@@ -281,7 +281,8 @@
           "imageFields": [],
           "imgFieldWidth": "auto",
           "imgFieldHeight": "85px",
-          "title": "Table panel"
+          "title": "Table panel",
+          "localcolor": "#FFF"
         }
       ]
     }

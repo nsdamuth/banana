@@ -29,6 +29,10 @@ function (angular, app, _) {
 
     // Set and populate defaults
     var _d = {
+      panelColor: "#000000",
+      panelBorderWidth: "0",
+      panelBorderColor: "#FFFFFF",
+      panelBorderRadius: "0",
       spyable: true
     };
     _.defaults($scope.panel,_d);

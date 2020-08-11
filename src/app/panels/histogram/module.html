@@ -1,4 +1,4 @@
-<div ng-controller='histogram' ng-init="init()" style="min-height:{{panel.height || row.height}}">
+<div ng-controller='histogram' ng-init="init()" style="padding-left: 6px;min-height:{{panel.height || row.height}};background-color:{{panel.panelColor}}; border:{{panel.panelBorderWidth}}px {{panel.panelBorderColor}} solid;border-radius:{{panel.panelBorderRadius}}">
   <style>
     .histogram-legend {
       display:inline-block;

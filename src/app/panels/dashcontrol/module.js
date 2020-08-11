@@ -38,6 +38,10 @@ function(angular, app, _) {
     $scope.panel = $scope.panel || {};
     // Set and populate defaults
     var _d = {
+      panelcolor: "#000000",
+      panelborderwidth: "0",
+      panelbordercolor: "#FFFFFF",
+      panelborderradius: "0",
       save : {
         gist: false,
         elasticsearch: true,

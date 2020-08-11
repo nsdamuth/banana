@@ -37,6 +37,10 @@ function (angular, app, _, $, d3) {
 
     // Define panel's default properties and values
     var _d = {
+      panelColor: "#000000",
+      panelBorderWidth: "0",
+      panelBorderColor: "#FFFFFF",
+      panelBorderRadius: "0",
       queries: {
         mode: 'all',
         query: '*:*',

@@ -1,4 +1,4 @@
-<div ng-controller='text' ng-init="init()">
+<div ng-controller='text' ng-init="init()" style="padding-left: 6px;background-color:{{panel.panelColor}}; border:{{panel.panelBorderWidth}}px {{panel.panelBorderColor}} solid;border-radius:{{panel.panelBorderRadius}}">
   <!--<p ng-style="panel.style" ng-bind-html-unsafe="panel.content | striphtml | newlines"></p>-->
   <markdown ng-show="ready && panel.mode == 'markdown'">
     {{panel.content}}

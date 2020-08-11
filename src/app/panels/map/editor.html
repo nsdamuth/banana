@@ -50,7 +50,22 @@
     <input class="input-small" ng-disabled="panel.map != 'world'" ng-model="panel.useNames" type="checkbox" ng-change="set_refresh(true)"></inpt>
   </div>
 </div>
-
-
-
-display: block;width: 70vw;height: 80vh;top: 10vh;left: 15vw;
+<h5>Panel Style Settings</h5>
+<div class="row-fluid">
+  <div class="span3">
+      <label class="small">Background Color</label>
+      <input type="text" class="input-medium" style="width:100px;" ng-model="panel.panelColor" ng-change="set_refresh(true)">
+  </div>
+  <div class="span3">
+    <label class="small">Border Width</label>
+    <input type="text" class="input-medium" style="width:100px;" ng-model="panel.panelBorderWidth" ng-change="set_refresh(true)">
+  </div>
+  <div class="span3">
+    <label class="small">Background Color</label>
+    <input type="text" class="input-medium" style="width:100px;" ng-model="panel.panelBorderColor" ng-change="set_refresh(true)">
+  </div>
+  <div class="span3">
+    <label class="small">Border Radius</label>
+    <input type="text" class="input-medium" style="width:100px;" ng-model="panel.panelBorderRadius" ng-change="set_refresh(true)">
+  </div>
+</div>

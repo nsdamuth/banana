@@ -1,4 +1,4 @@
-<div ng-controller="docviewer" ng-init="init()">
+<div ng-controller="docviewer" ng-init="init()" style="padding-left: 6px;background-color:{{panel.panelColor}}; border:{{panel.panelBorderWidth}}px {{panel.panelBorderColor}} solid;border-radius:{{panel.panelBorderRadius}}">
   <div class="row-fluid">
     <div class="span12" style="text-align:center">
       <strong>{{docIndex+1}}</strong> <small>of {{data.length}} available for paging</small>

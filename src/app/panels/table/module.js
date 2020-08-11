@@ -62,6 +62,10 @@ function (angular, app, _, kbn, moment) {
 
         // Set and populate defaults
         var _d = {
+            panelColor: "#000000",
+            panelBorderWidth: "0",
+            panelBorderColor: "#FFFFFF",
+            panelBorderRadius: "0",
             status: "Stable",
             queries: {
                 mode: 'all',
