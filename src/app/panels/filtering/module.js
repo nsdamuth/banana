@@ -36,6 +36,7 @@ function (angular, app, _) {
       panelFontColor: "#999999",
       panelFontSize: "1.2vh",
       panelFontWeight: "inherit",
+      panelButtonDisplay: "inherit",
       spyable: true
     };
     _.defaults($scope.panel,_d);

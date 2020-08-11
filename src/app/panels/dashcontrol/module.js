@@ -42,6 +42,10 @@ function(angular, app, _) {
       panelborderwidth: "0",
       panelbordercolor: "#FFFFFF",
       panelborderradius: "0",
+      panelFontColor: "#999999",
+      panelFontSize: "1.2vh",
+      panelFontWeight: "inherit",
+      panelButtonDisplay: true,
       save : {
         gist: false,
         elasticsearch: true,

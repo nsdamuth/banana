@@ -58,6 +58,7 @@ function (angular, app, _, L, localRequire) {
       panelFontColor: "#999999",
       panelFontSize: "1.2vh",
       panelFontWeight: "inherit",
+      panelButtonDisplay: "inherit",
       queries     : {
         mode        : 'all',
         ids         : [],

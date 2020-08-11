@@ -48,6 +48,7 @@ function (angular, app, _) {
       panelFontColor: "#999999",
       panelFontSize: "1.2vh",
       panelFontWeight: "inherit",
+      panelButtonDisplay: "inherit",
       loading : false,
       label   : "Search",
       query   : "*",

@@ -13,7 +13,7 @@ function (angular) {
 
         '<div class="row-fluid panel-extra"><div class="panel-extra-container">' +
 
-          '<span class="extra row-button" ng-hide="panel.draggable == false">' +
+          '<span class="extra row-button" style="display: {{panel.panelButtonDisplay}}"ng-hide="panel.draggable == false">' +
             '<span class="row-text pointer" bs-tooltip="\'Drag here to move\'"' +
             'data-drag=true data-jqyoui-options="{revert: \'invalid\',helper:\'clone\'}"'+
             ' jqyoui-draggable="'+

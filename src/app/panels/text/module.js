@@ -32,6 +32,7 @@ function (angular, app, _, require) {
       panelFontColor: "#999999",
       panelFontSize: "1.2vh",
       panelFontWeight: "inherit",
+      panelButtonDisplay: "inherit",
       status  : "Stable",
       mode    : "markdown",
       content : "",

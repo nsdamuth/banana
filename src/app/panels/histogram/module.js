@@ -79,6 +79,7 @@ function (angular, app, $, _, kbn, moment, timeSeries) {
       panelFontColor: "#999999",
       panelFontSize: "1.2vh",
       panelFontWeight: "inherit",
+      panelButtonDisplay: "inherit",
       mode        : 'count',
       queries     : {
         mode        : 'all',

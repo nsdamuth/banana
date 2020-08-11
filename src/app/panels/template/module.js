@@ -44,6 +44,7 @@ function (angular, app, _, $, d3) {
       panelFontColor: "#999999",
       panelFontSize: "1.2vh",
       panelFontWeight: "inherit",
+      panelButtonDisplay: "inherit",
       queries: {
         mode: 'all',
         query: '*:*',

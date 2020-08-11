@@ -69,6 +69,7 @@ function (angular, app, _, kbn, moment) {
             panelFontColor: "#999999",
             panelFontSize: "1.2vh",
             panelFontWeight: "inherit",
+            panelButtonDisplay: "inherit",
             status: "Stable",
             queries: {
                 mode: 'all',

@@ -35,6 +35,7 @@ function (angular, app, _, config) {
       panelFontColor: "#999999",
       panelFontSize: "1.2vh",
       panelFontWeight: "inherit",
+      panelButtonDisplay: "inherit",
       panels : []
     };
     _.defaults($scope.panel,_d);

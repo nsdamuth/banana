@@ -46,6 +46,7 @@ function (angular, app, _, $, vis, X2JS, kbn) {
       panelFontColor: "#999999",
       panelFontSize: "1.2vh",
       panelFontWeight: "inherit",
+      panelButtonDisplay: "inherit",
       queries     : {
         mode        : 'all',
         ids         : [],
