@@ -66,6 +66,9 @@ function (angular, app, _, kbn, moment) {
             panelBorderWidth: "0",
             panelBorderColor: "#FFFFFF",
             panelBorderRadius: "0",
+            panelFontColor: "#999999",
+            panelFontSize: "1.2vh",
+            panelFontWeight: "inherit",
             status: "Stable",
             queries: {
                 mode: 'all',

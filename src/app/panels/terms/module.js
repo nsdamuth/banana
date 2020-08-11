@@ -47,6 +47,9 @@ function (angular, app, _, $, kbn) {
       panelBorderWidth: "0",
       panelBorderColor: "#FFFFFF",
       panelBorderRadius: "0",
+      panelFontColor: "#999999",
+      panelFontSize: "1.2vh",
+      panelFontWeight: "inherit",
       queries     : {
         mode        : 'all',
         ids         : [],

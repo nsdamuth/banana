@@ -1,4 +1,4 @@
-<div ng-controller="heatmap" ng-init="init()" style="padding-left: 6px;background-color:{{panel.panelColor}}; border:{{panel.panelBorderWidth}}px {{panel.panelBorderColor}} solid;border-radius:{{panel.panelBorderRadius}}">
+<div ng-controller="heatmap" ng-init="init()" style="padding-left: 6px;background-color:{{panel.panelColor}}; border:{{panel.panelBorderWidth}}px {{panel.panelBorderColor}} solid;border-radius:{{panel.panelBorderRadius}}px;color:{{panel.panelFontColor}};font-size:{{panel.panelFontSize}};font-weight:{{panel.panelFontWeight}}">
     <div ng-style="{ 'overflow':'auto', 'height':row.height }">
         <heatmap-chart />
     </div>

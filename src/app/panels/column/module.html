@@ -1,4 +1,4 @@
-<div ng-controller="column" ng-init="init();" style="padding-left: 6px;background-color:{{panel.panelColor}}; border:{{panel.panelBorderWidth}}px {{panel.panelBorderColor}} solid;border-radius:{{panel.panelBorderRadius}}">
+<div ng-controller="column" ng-init="init();" style="padding-left: 6px;background-color:{{panel.panelColor}}; border:{{panel.panelBorderWidth}}px {{panel.panelBorderColor}} solid;border-radius:{{panel.panelBorderRadius}}px;color:{{panel.panelFontColor}};font-size:{{panel.panelFontSize}};font-weight:{{panel.panelFontWeight}}">
   <!-- Panels -->
   <div ng-repeat="(name, panel) in panel.panels" ng-hide="panel.height == '0px' || panel.hide" class="row-fluid panel" style="min-height:{{panel.height}}; position:relative">
     <!-- Error Panel -->

@@ -1,4 +1,4 @@
-<div ng-controller='bettermap' ng-init="init()" style="padding-left: 6px;background-color:{{panel.panelColor}}; border:{{panel.panelBorderWidth}}px {{panel.panelBorderColor}} solid;border-radius:{{panel.panelBorderRadius}}">
+<div ng-controller='bettermap' ng-init="init()" style="padding-left: 6px;background-color:{{panel.panelColor}}; border:{{panel.panelBorderWidth}}px {{panel.panelBorderColor}} solid;border-radius:{{panel.panelBorderRadius}}px;color:{{panel.panelFontColor}};font-size:{{panel.panelFontSize}};font-weight:{{panel.panelFontWeight}}">
   <!-- This solution might work well for other panels that have trouble with heights -->
   <div  style="padding-right:10px;padding-top:10px;height:{{panel.height|| row.height}};overflow:hidden">
     <div bettermap id='bettermap' params="{{panel}}" style="height:100%"></div>
